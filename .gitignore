@@ -24,3 +24,12 @@ chroot.packages.live
 *~
 *.swp
 *.tmp
+
+# live build generated file/package lists
+live-image-*.files
+live-image-*.packages
+
+# test scripts
+test-run.sh
+test-uefi.sh
+
