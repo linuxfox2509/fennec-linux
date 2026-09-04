@@ -32,4 +32,6 @@ live-image-*.packages
 # test scripts
 test-run.sh
 test-uefi.sh
-
+clearnano.sh
+check*.sh
+backup-iso.sh
