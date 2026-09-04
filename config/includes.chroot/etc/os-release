@@ -1,0 +1,6 @@
+PRETTY_NAME="Fennec Linux"
+NAME="Fennec Linux"
+VERSION_ID="0.1"
+VERSION="0.1"
+ID=fennec
+ID_LIKE=debian

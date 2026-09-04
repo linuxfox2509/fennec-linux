@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Fennec
+Comment=Fennec Linux Live Desktop
+Exec=jwm
+TryExec=jwm
+Type=Application
+DesktopNames=JWM

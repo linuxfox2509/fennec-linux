@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<JWM>
+
+    <!-- =========================
+         APPLICATION MENU
+         ========================= -->
+    <RootMenu onroot="12">
+        <Program label="File Manager">pcmanfm</Program>
+
+        <Separator/>
+
+        <Program label="Terminal">qterminal</Program>
+        <Program label="XTerm">xterm</Program>
+
+        <Separator/>
+
+        <Program label="GParted">pkexec /usr/sbin/gparted</Program>
+
+        <Separator/>
+
+        <Restart label="Restart JWM"/>
+
+	<Separator/>
+
+	<Program label="Restart">systemctl reboot</Program>
+	<Program label="Shut Down">systemctl poweroff</Program>
+        <Exit label="Log Out"/>
+    </RootMenu>
+
+
+    <!-- =========================
+         BOTTOM PANEL
+         ========================= -->
+    <Tray x="0" y="-1" height="34">
+
+        <TrayButton
+            label="Fennec"
+            icon="/usr/share/icons/hicolor/32x32/apps/fennec.png">
+            root:1
+        </TrayButton>
+
+        <TaskList maxwidth="256"/>
+
+        <Dock/>
+
+        <Clock format="%H:%M">
+            <Button mask="123">exec:qterminal</Button>
+        </Clock>
+
+    </Tray>
+
+
+    <!-- =========================
+         WINDOW THEME
+         ========================= -->
+    <WindowStyle>
+
+        <Font>Sans-10</Font>
+        <Width>2</Width>
+
+        <Active>
+            <Text>#111111</Text>
+            <Title>#D89A4A</Title>
+            <Outline>#8C5A2B</Outline>
+        </Active>
+
+        <Inactive>
+            <Text>#222222</Text>
+            <Title>#D8B07A</Title>
+            <Outline>#9C7A52</Outline>
+        </Inactive>
+
+    </WindowStyle>
+
+
+    <!-- =========================
+         PANEL THEME
+         ========================= -->
+    <TrayStyle>
+        <Font>Sans-10</Font>
+        <Background>#D89A4A</Background>
+        <Foreground>#111111</Foreground>
+        <Outline>#8C5A2B</Outline>
+    </TrayStyle>
+
+
+    <!-- =========================
+         WORKSPACES
+         ========================= -->
+    <Desktops width="2" height="1"/>
+
+
+    <!-- =========================
+         KEYBOARD SHORTCUTS
+         ========================= -->
+    <Key key="F4" mask="A">close</Key>
+    <Key key="Tab" mask="A">nextstacked</Key>
+    <Key key="Return" mask="A">exec:qterminal</Key>
+
+
+    <!-- =========================
+         STARTUP PROGRAMS
+         ========================= -->
+    <StartupCommand>pcmanfm --desktop</StartupCommand>
+    <StartupCommand>lxpolkit</StartupCommand>
+    <StartupCommand>nm-applet</StartupCommand>
+    <StartupCommand>pasystray</StartupCommand>
+    <StartupCommand>gxkb</StartupCommand>
+
+</JWM>

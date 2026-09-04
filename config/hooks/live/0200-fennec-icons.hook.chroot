@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+SOURCE="/usr/share/fennec/branding/fennec-icon-512.png"
+
+for SIZE in 16 22 24 32 48 64 128 256 512; do
+    DIR="/usr/share/icons/hicolor/${SIZE}x${SIZE}/apps"
+    mkdir -p "$DIR"
+
+    if [ "$SIZE" = "512" ]; then
+        cp "$SOURCE" "$DIR/fennec.png"
+    else
+        convert "$SOURCE" -resize "${SIZE}x${SIZE}" "$DIR/fennec.png"
+    fi
+done
+
+gtk-update-icon-cache -f /usr/share/icons/hicolor || true

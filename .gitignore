@@ -1,0 +1,26 @@
+# live-build generated directories
+.build/
+binary/
+chroot/
+cache/
+local/
+
+# live-build generated metadata
+binary.modified_timestamps
+chroot.files
+chroot.packages.install
+chroot.packages.live
+
+# Generated images
+*.iso
+*.img
+
+# Checksums / generated build output
+*.contents
+*.packages
+*.zsync
+
+# Temporary files
+*~
+*.swp
+*.tmp
