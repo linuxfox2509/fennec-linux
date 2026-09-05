@@ -22,3 +22,6 @@ imagemagick
 gxkb
 calamares
 calamares-settings-debian
+keyboard-configuration
+console-setup
+console-setup-linux
