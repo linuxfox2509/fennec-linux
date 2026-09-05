@@ -1,0 +1,32 @@
+---
+componentName: fennec
+welcomeStyleCalamares: true
+welcomeExpandingLogo: true
+windowExpanding: normal
+windowSize: 800px,580px
+windowPlacement: center
+
+strings:
+    productName:         Fennec Linux
+    shortProductName:    Fennec
+    version:             0.1
+    shortVersion:        0.1
+    versionedName:       Fennec Linux 0.1
+    shortVersionedName:  Fennec 0.1
+    bootloaderEntryName: Fennec Linux
+
+sidebar: widget
+navigation: widget
+
+images:
+    productLogo:         "fennec-logo.png"
+    productIcon:         "fennec-logo.png"
+    productWelcome:      "fennec-wallpaper.png"
+
+style:
+   SidebarBackground:    "#111111"
+   SidebarText:          "#FFFFFF"
+   SidebarTextCurrent:   "#FFFFFF"
+   SidebarBackgroundCurrent: "#333333"
+
+slideshowAPI: 2

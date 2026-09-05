@@ -24,14 +24,18 @@ chroot.packages.live
 *~
 *.swp
 *.tmp
+reference
 
 # live build generated file/package lists
 live-image-*.files
 live-image-*.packages
 
 # test scripts
-test-run.sh
-test-uefi.sh
+test*.sh
 clearnano.sh
 check*.sh
 backup-iso.sh
+
+#qemu
+*.qcow2
+

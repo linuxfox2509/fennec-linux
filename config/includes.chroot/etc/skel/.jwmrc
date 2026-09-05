@@ -6,6 +6,10 @@
          APPLICATION MENU
          ========================= -->
     <RootMenu onroot="12">
+	<Program label="Install Fennec Linux">calamares-install-debian</Program>
+
+	<Separator/>
+
         <Program label="File Manager">pcmanfm</Program>
 
         <Separator/>
