@@ -23,6 +23,8 @@ images:
     productIcon:         "fennec-logo.png"
     productWelcome:      "fennec-wallpaper.png"
 
+slideshow: "show.qml"
+
 style:
    SidebarBackground:    "#111111"
    SidebarText:          "#FFFFFF"
