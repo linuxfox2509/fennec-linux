@@ -1,0 +1,101 @@
+[1mdiff --git a/config/includes.chroot/etc/calamares/modules/desktopchooser.conf b/config/includes.chroot/etc/calamares/modules/desktopchooser.conf[m
+[1mindex ce10a49..889ce0f 100644[m
+[1m--- a/config/includes.chroot/etc/calamares/modules/desktopchooser.conf[m
+[1m+++ b/config/includes.chroot/etc/calamares/modules/desktopchooser.conf[m
+[36m@@ -10,30 +10,56 @@[m [mdefault: jwm[m
+ items:[m
+   - id: jwm[m
+     name: "JWM"[m
+[31m-    description: "A very lightweight desktop using Joe's Window Manager. Recommended for older or low-resource systems."[m
+[32m+[m[32m    description: "A very lightweight desktop using Joe's Window Manager."[m
+     screenshot: ":/images/no-selection.png"[m
+[32m+[m[32m    packages:[m
+[32m+[m[32m      - jwm[m
+[32m+[m[32m      - xserver-xorg[m
+[32m+[m[32m      - lightdm[m
+[32m+[m[32m      - lightdm-gtk-greeter[m
+[32m+[m[32m      - pcmanfm[m
+[32m+[m[32m      - qterminal[m
+[32m+[m[32m      - network-manager[m
+[32m+[m[32m      - network-manager-applet[m
+[32m+[m[32m      - nm-connection-editor[m
+[32m+[m[32m      - pipewire[m
+[32m+[m[32m      - wireplumber[m
+[32m+[m[32m      - pipewire-pulse[m
+[32m+[m[32m      - pavucontrol[m
+[32m+[m[32m      - lxpolkit[m
+[32m+[m[32m      - gxkb[m
+[32m+[m[32m      - adwaita-icon-theme[m
+ [m
+   - id: lxqt[m
+     name: "LXQt"[m
+[31m-    description: "A lightweight Qt-based desktop environment with a traditional desktop layout."[m
+[32m+[m[32m    description: "A lightweight Qt-based desktop environment."[m
+     screenshot: ":/images/no-selection.png"[m
+[32m+[m[32m    packages:[m
+[32m+[m[32m      - task-lxqt-desktop[m
+ [m
+   - id: xfce[m
+     name: "Xfce"[m
+[31m-    description: "A lightweight and full-featured desktop environment designed for speed and usability."[m
+[32m+[m[32m    description: "A lightweight and full-featured desktop environment."[m
+     screenshot: ":/images/no-selection.png"[m
+[32m+[m[32m    packages:[m
+[32m+[m[32m      - task-xfce-desktop[m
+ [m
+   - id: mate[m
+     name: "MATE"[m
+[31m-    description: "A traditional desktop environment with a familiar layout and a complete set of desktop tools."[m
+[32m+[m[32m    description: "A traditional and complete desktop environment."[m
+     screenshot: ":/images/no-selection.png"[m
+[32m+[m[32m    packages:[m
+[32m+[m[32m      - task-mate-desktop[m
+ [m
+   - id: plasma[m
+     name: "KDE Plasma"[m
+[31m-    description: "A modern and highly configurable desktop environment with extensive features."[m
+[32m+[m[32m    description: "A modern and highly configurable desktop environment."[m
+     screenshot: ":/images/no-selection.png"[m
+[32m+[m[32m    packages:[m
+[32m+[m[32m      - task-kde-desktop[m
+ [m
+   - id: none[m
+     name: "No desktop"[m
+[31m-    description: "Install Fennec Linux without a graphical desktop environment. The installed system will boot to a text console."[m
+[32m+[m[32m    description: "Install Fennec Linux without a graphical desktop environment."[m
+     screenshot: ":/images/no-selection.png"[m
+[32m+[m[32m    packages: [][m
+[1mdiff --git a/config/includes.chroot/etc/calamares/settings.conf b/config/includes.chroot/etc/calamares/settings.conf[m
+[1mindex 06198d3..a19fbe7 100644[m
+[1m--- a/config/includes.chroot/etc/calamares/settings.conf[m
+[1m+++ b/config/includes.chroot/etc/calamares/settings.conf[m
+[36m@@ -44,6 +44,10 @@[m [minstances:[m
+      module: packagechooser[m
+      config: desktopchooser.conf[m
+ [m
+[32m+[m[32m   - id: desktopinstall[m
+[32m+[m[32m     module: contextualprocess[m
+[32m+[m[32m     config: desktopinstall.conf[m
+[32m+[m
+ sequence:[m
+ # Phase 1 - prepare.[m
+ # View modules are shown as UI pages, jobs from job modules[m
+[36m@@ -77,6 +81,7 @@[m [msequence:[m
+   - keyboard[m
+   - localecfg[m
+   - users[m
+[32m+[m[32m  - contextualprocess@desktopinstall[m
+   - displaymanager[m
+   - networkcfg[m
+   - hwclock[m
+[1mdiff --git a/config/includes.chroot/etc/skel/.config/gxkb/gxkb.cfg b/config/includes.chroot/etc/skel/.config/gxkb/gxkb.cfg[m
+[1mindex 84ca078..38710d8 100644[m
+[1m--- a/config/includes.chroot/etc/skel/.config/gxkb/gxkb.cfg[m
+[1m+++ b/config/includes.chroot/etc/skel/.config/gxkb/gxkb.cfg[m
+[36m@@ -1,5 +1,5 @@[m
+ [xkb config][m
+[31m-group_policy=2[m
+[32m+[m[32mgroup_policy=0[m
+ default_group=0[m
+ never_modify_config=false[m
+ model=pc105[m

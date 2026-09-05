@@ -1,0 +1,8 @@
+#!/bin/sh
+
+cat <<'EOF'
+set color_normal=light-gray/black
+set color_highlight=black/white
+set menu_color_normal=light-gray/black
+set menu_color_highlight=black/white
+EOF

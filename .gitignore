@@ -35,6 +35,8 @@ test*.sh
 clearnano.sh
 check*.sh
 backup-iso.sh
+build-fast.sh
+wipevhd.sh
 
 #qemu
 *.qcow2
