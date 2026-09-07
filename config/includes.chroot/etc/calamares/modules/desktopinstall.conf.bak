@@ -1,69 +1,70 @@
 ---
 dontChroot: false
-timeout: 14400
+timeout: 3600
 
 packagechooser_desktopchooser:
 
   jwm:
     - "/usr/bin/rm -f /etc/lightdm/lightdm.conf.d/50-fennec.conf"
     - "/bin/sed -i '\\|<Program label=\"Install Fennec Linux\">|,+2d' /home/${USER}/.jwmrc"
-    - "/usr/bin/rm -f /home/${USER}/Desktop/Install-Fennec-Linux.desktop"
-    - "/usr/bin/rm -f /usr/share/applications/fennec-installer.desktop"
     - "/usr/bin/systemctl set-default graphical.target"
 
   lxqt:
+    - "/usr/bin/rm -f /etc/lightdm/lightdm.conf.d/50-fennec.conf"
+
     - command: "/usr/bin/apt-get update"
       timeout: 600
+
     - command: "DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y task-lxqt-desktop"
-      timeout: 14400
-    - "/usr/bin/apt-get purge -y jwm lightdm lightdm-gtk-greeter pcmanfm lxpolkit gxkb pasystray"
+      timeout: 3600
+
+    - "/usr/bin/apt-get purge -y jwm pcmanfm lxpolkit gxkb pasystray"
     - "/usr/bin/rm -f /usr/share/xsessions/fennec.desktop"
-    - "/usr/bin/rm -f /home/${USER}/Desktop/Install-Fennec-Linux.desktop"
-    - "/usr/bin/rm -f /usr/share/applications/fennec-installer.desktop"
-    - "/usr/bin/systemctl enable sddm.service"
     - "/usr/bin/systemctl set-default graphical.target"
 
   xfce:
+    - "/usr/bin/rm -f /etc/lightdm/lightdm.conf.d/50-fennec.conf"
+
     - command: "/usr/bin/apt-get update"
       timeout: 600
+
     - command: "DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y task-xfce-desktop"
-      timeout: 14400
-    - "/usr/bin/rm -f /etc/lightdm/lightdm.conf.d/50-fennec.conf"
+      timeout: 3600
+
     - "/usr/bin/apt-get purge -y jwm pcmanfm lxpolkit gxkb pasystray qterminal"
     - "/usr/bin/rm -f /usr/share/xsessions/fennec.desktop"
-    - "/usr/bin/rm -f /home/${USER}/Desktop/Install-Fennec-Linux.desktop"
-    - "/usr/bin/rm -f /usr/share/applications/fennec-installer.desktop"
     - "/usr/bin/systemctl set-default graphical.target"
 
   mate:
+    - "/usr/bin/rm -f /etc/lightdm/lightdm.conf.d/50-fennec.conf"
+
     - command: "/usr/bin/apt-get update"
       timeout: 600
+
     - command: "DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y task-mate-desktop"
-      timeout: 14400
-    - "/usr/bin/rm -f /etc/lightdm/lightdm.conf.d/50-fennec.conf"
+      timeout: 3600
+
     - "/usr/bin/apt-get purge -y jwm pcmanfm lxpolkit gxkb pasystray qterminal"
     - "/usr/bin/rm -f /usr/share/xsessions/fennec.desktop"
-    - "/usr/bin/rm -f /home/${USER}/Desktop/Install-Fennec-Linux.desktop"
-    - "/usr/bin/rm -f /usr/share/applications/fennec-installer.desktop"
     - "/usr/bin/systemctl set-default graphical.target"
 
   plasma:
+    - "/usr/bin/rm -f /etc/lightdm/lightdm.conf.d/50-fennec.conf"
+
     - command: "/usr/bin/apt-get update"
       timeout: 600
+
     - command: "DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y task-kde-desktop"
-      timeout: 14400
-    - "/usr/bin/apt-get purge -y jwm lightdm lightdm-gtk-greeter pcmanfm lxpolkit gxkb pasystray qterminal"
+      timeout: 3600
+
+    - "/usr/bin/apt-get purge -y jwm pcmanfm lxpolkit gxkb pasystray qterminal"
     - "/usr/bin/rm -f /usr/share/xsessions/fennec.desktop"
-    - "/usr/bin/rm -f /home/${USER}/Desktop/Install-Fennec-Linux.desktop"
-    - "/usr/bin/rm -f /usr/share/applications/fennec-installer.desktop"
-    - "/usr/bin/systemctl enable sddm.service"
     - "/usr/bin/systemctl set-default graphical.target"
 
   none:
+    - "/usr/bin/rm -f /etc/lightdm/lightdm.conf.d/50-fennec.conf"
     - "/usr/bin/apt-get purge -y jwm lightdm lightdm-gtk-greeter pcmanfm lxpolkit gxkb pasystray qterminal network-manager-applet nm-connection-editor pavucontrol"
     - "/usr/bin/rm -f /usr/share/xsessions/fennec.desktop"
-    - "/usr/bin/rm -f /home/${USER}/Desktop/Install-Fennec-Linux.desktop"
-    - "/usr/bin/rm -f /usr/share/applications/fennec-installer.desktop"
     - "/usr/bin/systemctl set-default multi-user.target"
 
   "*":

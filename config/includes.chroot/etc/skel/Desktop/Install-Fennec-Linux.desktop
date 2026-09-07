@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Install Fennec
+GenericName=System Installer
+Comment=Install Fennec Linux to your computer
+Exec=calamares-install-debian
+Icon=fennec
+Terminal=false
+Categories=System;
+StartupNotify=true
